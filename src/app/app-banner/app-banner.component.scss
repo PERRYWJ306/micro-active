@@ -1,0 +1,41 @@
+.banner-section {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    margin: 20px; 
+    background-image: url(../../assets/ma-background.svg);
+}
+
+.banner-container {
+    flex-direction: column;
+    text-align: center;
+    margin: 50px;
+}
+
+.banner-image {
+    height: auto;
+    text-align: left;
+}
+
+.banner-row {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.banner-jumbo {
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+}
+
+.banner-jumbo-small {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.banner-jumbo-tiny {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}

@@ -1,0 +1,35 @@
+.motto-section {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    margin: 20px; 
+}
+
+.motto-container {
+    flex-direction: column;
+    text-align: center;
+    margin: 50px;
+}
+
+.motto-row {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.motto-jumbo {
+    font-size: 4rem;
+    font-weight: 700;
+    color: silver;
+}
+
+.motto-jumbo-small {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: silver;
+}
+
+.motto-jumbo-tiny {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: silver;
+}
