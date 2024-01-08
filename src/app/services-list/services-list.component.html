@@ -1,0 +1,10 @@
+<div class="service-list-container">
+    <div class="service-list-row"><span class="service-list-jumbo-small">SERVICES</span></div>          
+</div>
+<div class="service-list-section">
+    @for (item of services; track item.name) {
+        <div class="service-list-item">
+            <app-services-item [title]="item.name" [description]="item.description"></app-services-item>
+        </div>
+    }
+</div>

@@ -1,0 +1,41 @@
+.skill-list-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: silver;
+    margin: 20px;
+}
+
+.skill-list-container {
+    flex-direction: column;
+    text-align: center;
+}
+
+.skill-list-row {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.skill-list-item {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.skill-list-jumbo {
+    font-size: 4rem;
+    font-weight: 700;
+    color: silver;
+}
+
+.skill-list-jumbo-small {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: black;
+}
+
+.skill-list-jumbo-tiny {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: silver;
+}

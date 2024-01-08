@@ -1,0 +1,10 @@
+<div class="skill-list-container">
+    <div class="skill-list-row"><span class="skill-list-jumbo-small">SKILLS</span></div>          
+</div>
+<div class="skill-list-section">
+    @for (item of skills; track item.name) {
+        <div class="skill-list-item">
+            <app-skills-item [title]="item.name" [description]="item.description"></app-skills-item>
+        </div>
+    }
+</div>

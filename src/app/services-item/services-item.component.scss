@@ -1,0 +1,16 @@
+.services-card {
+    color: white;
+    max-width: 200px;
+    background-color: black;
+    min-height: 300px;
+}
+
+.services-card-header {
+    background-color: #62c1bf;
+    height: 50px;
+}
+
+.services-card-header-image {
+    background-image: url('../../assets/card-background-1.svg');
+    background-size: cover;
+}

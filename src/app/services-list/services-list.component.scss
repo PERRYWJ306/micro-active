@@ -1,0 +1,41 @@
+.service-list-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: silver;
+    margin: 20px;
+}
+
+.service-list-container {
+    flex-direction: column;
+    text-align: center;
+}
+
+.service-list-row {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.service-list-item {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.service-list-jumbo {
+    font-size: 4rem;
+    font-weight: 700;
+    color: silver;
+}
+
+.service-list-jumbo-small {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: black;
+}
+
+.service-list-jumbo-tiny {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: silver;
+}
