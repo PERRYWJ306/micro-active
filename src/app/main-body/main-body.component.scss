@@ -1,0 +1,47 @@
+.main-section {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    margin-left: 20px; 
+    margin-right: 20px;
+    margin-top: 20px;
+    min-width: 800px;
+    min-height: 650px;
+    background-image: url(../../assets/small-logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main-container {
+    flex-direction: column;
+    text-align: center;
+    margin: 20px;
+}
+
+.main-image {
+    height: auto;
+    text-align: left;
+}
+
+.main-row {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.main-jumbo {
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main-jumbo-small {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main-jumbo-tiny {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}

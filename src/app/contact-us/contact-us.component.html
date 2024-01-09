@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+      <div class="contact-us-section">
+        <div class="contact-us-container">
+          <div class="contact-us-row"><span class="contact-us-jumbo-small">CONTACT US</span></div>  
+          <section>
+            <div>
+              <form [formGroup]="form" (ngSubmit)="send()">
+                <mat-form-field appearance="outline">
+                  <label for="name">Name</label>
+                  <input matInput formControlName="name" type="text" id="name" name="name" />
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <label for="email">Email</label>
+                  <input matInput formControlName="email" type="email" id="email" name="email" />
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <label for="message">Message</label>
+                  <textarea matInput formControlName="message" id="message" name="message" rows="8"></textarea>
+                </mat-form-field>
+                <button mat-raised-button class="button-secondary" color="secondary" (click)="onCancel()">CANCEL</button>
+                <button type="submit" mat-raised-button color="primary" [disabled]="!form.valid">SEND</button>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- <div class="contact-us-section">
+    <div class="contact-us-container">
+      <div class="contact-us-row"><span class="contact-us-jumbo-small">CONTACT US</span></div>  
+      <section>
+        <div>
+          <form [formGroup]="form" (ngSubmit)="send()">
+            <mat-form-field appearance="outline">
+              <label for="name">Name</label>
+              <input matInput formControlName="name" type="text" id="name" name="name" />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <label for="email">Email</label>
+              <input matInput formControlName="email" type="email" id="email" name="email" />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <label for="message">Message</label>
+              <textarea matInput formControlName="message" id="message" name="message" rows="8"></textarea>
+            </mat-form-field>
+            <button mat-button class="button-secondary" color="secondary" (click)="onCancel()">CANCEL</button>
+            <button mat-button class="button-primary" color="primary" type="submit">SEND</button>
+          </form>
+        </div>
+      </section>
+    </div>
+</div> -->

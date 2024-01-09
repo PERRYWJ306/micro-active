@@ -1,0 +1,87 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.container-row {
+    flex: 1;
+}
+
+.contact-us-card {
+    max-width: 400px;
+}
+
+.contact-us-section {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    width: 800px;
+}
+
+.contact-us-container {
+    flex-direction: column;
+    text-align: center;
+    margin: 50px;
+}
+
+.contact-us-row {
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.contact-us-jumbo {
+    font-size: 4rem;
+    font-weight: 700;
+    color: silver;
+}
+
+.contact-us-jumbo-small {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: black;
+}
+
+.contact-us-jumbo-tiny {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: silver;
+}
+
+.button-primary {
+    background-color: #62c1bf;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    min-width: 200px;
+}
+
+// .button-secondary {
+//     background-color: silver;
+//     color: white;
+//     font-size: 1.5rem;
+//     font-weight: 700;
+//     border-radius: 5px;
+//     border: none;
+//     padding: 10px;
+//     margin: 10px;
+//     min-width: 200px;
+// }
+
+mat-form-field {
+    width: 100%;
+    margin: 10px;
+}
+
+mat-raised-button {
+    width: 200px;
+    margin: 10px;
+}
