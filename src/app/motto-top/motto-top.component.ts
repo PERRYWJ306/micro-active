@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-motto-top',
   standalone: true,
-  imports: [],
+  imports: [MatButtonModule],
   templateUrl: './motto-top.component.html',
   styleUrl: './motto-top.component.scss'
 })

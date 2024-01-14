@@ -3,18 +3,20 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Router } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { EmailService } from '../email.service';
 
 @Component({
   selector: 'app-contact-us',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule],
+  imports: [FormsModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatButtonModule],
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.scss'
 })
 export class ContactUsComponent implements OnInit {
   form: FormGroup;  
   
-  constructor(private router: Router, private formBuilder: FormBuilder) {
+  constructor(private router: Router, private formBuilder: FormBuilder, private emailService: EmailService) {
     this.form = this.formBuilder.group({})
   }
 
@@ -23,14 +25,18 @@ export class ContactUsComponent implements OnInit {
   }
 
   send(): void {
-    const { name, email, message } = this.form?.value;
-    this.router.navigate(['/']);
+    const { firstname, lastname, company, title, message } = this.form?.value;
+//    this.router.navigate(['/']);
   }
 
   private buildForm(): void {
     this.form = this.formBuilder.group({
-      name: this.formBuilder.control('', [Validators.required, Validators.minLength(2)]),
+      firstname: this.formBuilder.control('', [Validators.required, Validators.minLength(2)]),
+      lastname: this.formBuilder.control('', [Validators.required, Validators.minLength(2)]),
       email: this.formBuilder.control('', [Validators.required, Validators.email]),
+      phone: this.formBuilder.control('', [Validators.minLength(10)]),
+      company: this.formBuilder.control('', [Validators.minLength(2)]),
+      title: this.formBuilder.control('', [Validators.minLength(2)]),
       message: this.formBuilder.control('', [Validators.required, Validators.minLength(2)]),
     });
   }

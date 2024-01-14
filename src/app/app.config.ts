@@ -5,6 +5,8 @@ import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { IMAGE_CONFIG } from '@angular/common';
+import { EmailService } from './email.service';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,6 +17,8 @@ export const appConfig: ApplicationConfig = {
         disableImageSizeWarning: true, 
         disableImageLazyLoadWarning: true
       },
-    }
+    },
+    provideHttpClient(),
+    EmailService
   ]
 };

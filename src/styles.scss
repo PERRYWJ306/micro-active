@@ -12,11 +12,94 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$micro-active-primary: mat.define-palette(mat.$indigo-palette);
-$micro-active-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$micro-active-primary: mat.define-palette(mat.$teal-palette);
+//$micro-active-primary: mat.define-palette('#62c1bf', 500);
+$micro-active-accent: mat.define-palette(mat.$blue-gray-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $micro-active-warn: mat.define-palette(mat.$red-palette);
+
+$primary: #62c1bf;
+$black: #000000;
+$white: #ffffff;
+
+
+$micro-active-brand-primary: (
+  50: '#E0F2F1',
+  100: '#B2DFDB',
+  200: '#80CBC4',
+  300: '#4DB6AC',
+  400: '#26A69A',
+  500: $primary, //$micro-active-primary,
+  600: '#00897B',
+  700: '#00796B',
+  800: '#00695C',
+  900: '#004D40',
+  contrast: (
+    50: $black,
+    100: $black,
+    200: $black,
+    300: $black,
+    400: $white,
+    500: $white,
+    600: $white,
+    700: $white,
+    800: $white,
+    900: $white
+  )
+);
+
+$micro-active-brand-accent: (
+  50: '#E0F2F1',
+  100: '#B2DFDB',
+  200: '#80CBC4',
+  300: '#4DB6AC',
+  400: '#26A69A',
+  500: $micro-active-accent,
+  600: '#00897B',
+  700: '#00796B',
+  800: '#00695C',
+  900: '#004D40',
+  contrast: (
+    50: $black,
+    100: $black,
+    200: $black,
+    300: $white,
+    400: $white,
+    500: $white,
+    600: $white,
+    700: $white,
+    800: $white,
+    900: $white
+  )
+);
+
+$micro-active-brand-warn: (
+  50: #fbe9e7,
+  100: #ffccbc,
+  200: #ffab91,
+  300: #ff8965,
+  400: #ff6f43,
+  500: $micro-active-warn,
+  600: #f4501e,
+  700: #e64919,
+  800: #d84215,
+  900: #bf350c,
+  contrast: (
+    50: $black,
+    100: $black,
+    200: $black,
+    300: $black,
+    400: $black,
+    500: $white,
+    600: $white,
+    700: $white,
+    800: $white,
+    900: $white
+  )
+);
+
+//$app-primary: mat-palette($micro-active-brand-primary);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
@@ -24,12 +107,7 @@ $micro-active-theme: mat.define-light-theme((
   color: (
     primary: $micro-active-primary,
     accent: $micro-active-accent,
-    warn: $micro-active-warn,
-    color1: #393939,
-    color2: #303030,
-    color3: #565656,
-    color4: #7A7A7A,
-    color5: #62c1bf,
+    warn: $micro-active-warn
   )
 ));
 
@@ -42,3 +120,9 @@ $micro-active-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// color1: #393939,
+// color2: #303030,
+// color3: #565656,
+// color4: #7A7A7A,
+// color5: #62c1bf,

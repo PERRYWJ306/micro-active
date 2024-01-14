@@ -8,6 +8,12 @@
     margin-right: 20px;
 }
 
+.field-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 .container-row {
     flex: 1;
 }
@@ -81,7 +87,7 @@ mat-form-field {
     margin: 10px;
 }
 
-mat-raised-button {
+button {
     width: 200px;
     margin: 10px;
 }
