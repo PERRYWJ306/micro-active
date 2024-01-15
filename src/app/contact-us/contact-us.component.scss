@@ -90,5 +90,11 @@ mat-form-field {
 button {
     width: 150px;
     margin: 10px;
-    background-color: #62c1bf;
+}
+
+.mat-mdc-raised-button.mat-primary {
+    --mdc-protected-button-container-color: #62c1bf;
+    --mdc-protected-button-label-text-color: #fff;
+    --mat-protected-button-state-layer-color: #fff;
+    --mat-protected-button-ripple-color: rgba(255, 255, 255, 0.1);
 }

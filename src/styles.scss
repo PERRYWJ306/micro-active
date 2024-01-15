@@ -9,6 +9,10 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+$primary: #62c1bf;
+$black: #000000;
+$white: #ffffff;
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
@@ -19,18 +23,13 @@ $micro-active-accent: mat.define-palette(mat.$blue-gray-palette, A200, A100, A40
 // The warn palette is optional (defaults to red).
 $micro-active-warn: mat.define-palette(mat.$red-palette);
 
-$primary: #62c1bf;
-$black: #000000;
-$white: #ffffff;
-
-
 $micro-active-brand-primary: (
   50: '#E0F2F1',
   100: '#B2DFDB',
   200: '#80CBC4',
   300: '#4DB6AC',
   400: '#26A69A',
-  500: $primary, //$micro-active-primary,
+  500: $micro-active-primary,
   600: '#00897B',
   700: '#00796B',
   800: '#00695C',
