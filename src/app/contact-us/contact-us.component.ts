@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import { EmailService } from '../email.service';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact-us',
@@ -16,17 +16,40 @@ import { EmailService } from '../email.service';
 export class ContactUsComponent implements OnInit {
   form: FormGroup;  
   
-  constructor(private router: Router, private formBuilder: FormBuilder, private emailService: EmailService) {
+  constructor(private router: Router, private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({})
   }
 
   ngOnInit(): void {
     this.buildForm();
+
+    emailjs.init('t8kKPXJVIS9NM6N0O');
   }
 
   send(): void {
-    const { firstname, lastname, company, title, message } = this.form?.value;
-//    this.router.navigate(['/']);
+    const { firstname, lastname, company, title, email, phone,  message }  = this.form?.value;
+    const serviceID = 'service_pjy63bp';
+    const templateID = 'template_2xs4hka';
+    const templateParams = {
+      firstname: firstname,
+      lastname: lastname, 
+      company: company, 
+      title: title, 
+      email: email, 
+      phone: phone,  
+      message: message
+    };
+
+    emailjs.send(serviceID, templateID, templateParams)
+      .then(() => {
+        console.log('Email sent successfully!');
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        this.router.navigate(['/']);
+      });
   }
 
   private buildForm(): void {
