@@ -5,17 +5,17 @@
           <div class="contact-us-row"><span class="contact-us-jumbo-small">CONTACT US</span></div>  
           <section>
             <div>
-              <form [formGroup]="form" (ngSubmit)="send()">
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <div class="field-container">
                   <div class="container-row">
                     <mat-form-field appearance="outline">
-                      <label for="firstname">First Name</label>
+                      <label for="firstname">First Name*</label>
                       <input matInput formControlName="firstname" type="text" id="firstname" name="firstname" />
                     </mat-form-field>
                   </div>
                   <div class="container-row">
                     <mat-form-field appearance="outline">
-                      <label for="lastname">Last Name</label>
+                      <label for="lastname">Last Name*</label>
                       <input matInput formControlName="lastname" type="text" id="lastname" name="lastame" />
                     </mat-form-field>
                   </div>
@@ -37,7 +37,7 @@
                 <div class="field-container">
                   <div class="container-row">
                     <mat-form-field appearance="outline">
-                      <label for="email">Email</label>
+                      <label for="email">Email*</label>
                       <input matInput formControlName="email" type="email" id="email" name="email" />
                     </mat-form-field> 
                   </div>
@@ -49,7 +49,7 @@
                   </div>
                 </div>
                 <mat-form-field appearance="outline">
-                  <label for="message">Message</label>
+                  <label for="message">Message*</label>
                   <textarea matInput formControlName="message" id="message" name="message" rows="8"></textarea>
                 </mat-form-field>
                 <button mat-raised-button class="button-secondary" color="secondary" (click)="onCancel()">CANCEL</button>

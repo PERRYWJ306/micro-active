@@ -4,19 +4,21 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
+import { ReCaptchaV3Service, RecaptchaV3Module } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-contact-us',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatButtonModule],
+  imports: [FormsModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatButtonModule, RecaptchaV3Module],
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.scss'
 })
 export class ContactUsComponent implements OnInit {
   form: FormGroup;  
   
-  constructor(private router: Router, private formBuilder: FormBuilder) {
+  constructor(private router: Router, private formBuilder: FormBuilder, 
+      private recaptchaV3Service: ReCaptchaV3Service) {
     this.form = this.formBuilder.group({})
   }
 
@@ -26,29 +28,11 @@ export class ContactUsComponent implements OnInit {
     emailjs.init('t8kKPXJVIS9NM6N0O');
   }
 
-  send(): void {
-    const { firstname, lastname, company, title, email, phone,  message }  = this.form?.value;
-    const serviceID = 'service_pjy63bp';
-    const templateID = 'template_2xs4hka';
-    const templateParams = {
-      firstname: firstname,
-      lastname: lastname, 
-      company: company, 
-      title: title, 
-      email: email, 
-      phone: phone,  
-      message: message
-    };
-
-    emailjs.send(serviceID, templateID, templateParams)
-      .then(() => {
-        console.log('Email sent successfully!');
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        this.router.navigate(['/']);
+  onSubmit() {
+    this.recaptchaV3Service.execute('contactUs').subscribe((token) => {
+          console.log(token);
+        }, (error) => {
+          console.log(error);
       });
   }
 
@@ -68,7 +52,30 @@ export class ContactUsComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  onSubmit() {
+  send() {
+    const { firstname, lastname, company, title, email, phone,  message }  = this.form?.value;
+    const serviceID = 'service_pjy63bp';
+    const templateID = 'template_2xs4hka';
+    const templateParams = {
+      firstname: firstname,
+      lastname: lastname, 
+      company: company, 
+      title: title, 
+      email: email, 
+      phone: phone,  
+      message: message
+    };
+    
+    emailjs.send(serviceID, templateID, templateParams)
+    .then(() => {
+      console.log('Email sent successfully!');
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+    .finally(() => {
+      this.router.navigate(['/']);
+    });
     this.router.navigate(['/']);
   }
 }
