@@ -29,11 +29,14 @@ export class ContactUsComponent implements OnInit {
   }
 
   onSubmit() {
-    this.recaptchaV3Service.execute('contactUs').subscribe((token) => {
-          console.log(token);
-        }, (error) => {
-          console.log(error);
-      });
+      this.recaptchaV3Service.execute('contactUs').subscribe({
+        next: (v) => {
+          this.sendEmail();
+          console.log(v);
+        },
+        error: (e) => console.error(e),
+        complete: () => console.info('complete') 
+    });
   }
 
   private buildForm(): void {
@@ -52,7 +55,7 @@ export class ContactUsComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  send() {
+  sendEmail() {
     const { firstname, lastname, company, title, email, phone,  message }  = this.form?.value;
     const serviceID = 'service_pjy63bp';
     const templateID = 'template_2xs4hka';
@@ -76,6 +79,5 @@ export class ContactUsComponent implements OnInit {
     .finally(() => {
       this.router.navigate(['/']);
     });
-    this.router.navigate(['/']);
   }
 }
