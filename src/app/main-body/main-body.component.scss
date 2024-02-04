@@ -5,8 +5,8 @@
     margin-left: 20px; 
     margin-right: 20px;
     margin-top: 20px;
-    min-width: 800px;
-    min-height: 650px;
+    min-height: 550px;
+    max-height: 650px;
     background-image: url(../../assets/small-logo.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -37,11 +37,32 @@
 .main-jumbo-small {
     font-size: 2.5rem;
     font-weight: 700;
-    color: white;
 }
 
 .main-jumbo-tiny {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 700;
-    color: white;
+}
+
+@keyframes services-frame {
+    from {
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-100%);
+    }
+}
+
+.service-slide {
+    overflow: hidden;
+    height: 600px;
+}
+
+.service-slide:hover .service-items {
+    animation-play-state: paused;
+}
+
+.service-items {
+    animation: 15s services-frame infinite linear;
+    white-space: nowrap;
 }

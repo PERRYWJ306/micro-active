@@ -5,20 +5,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import emailjs from '@emailjs/browser';
-import { ReCaptchaV3Service, RecaptchaV3Module } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-contact-us',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatButtonModule, RecaptchaV3Module],
+  imports: [FormsModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatButtonModule],
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.scss'
 })
 export class ContactUsComponent implements OnInit {
   form: FormGroup;  
   
-  constructor(private router: Router, private formBuilder: FormBuilder, 
-      private recaptchaV3Service: ReCaptchaV3Service) {
+  constructor(private router: Router, private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({})
   }
 
@@ -29,14 +27,7 @@ export class ContactUsComponent implements OnInit {
   }
 
   onSubmit() {
-      this.recaptchaV3Service.execute('contactUs').subscribe({
-        next: (v) => {
-          this.sendEmail();
-          console.log(v);
-        },
-        error: (e) => console.error(e),
-        complete: () => console.info('complete') 
-    });
+    this.sendEmail();
   }
 
   private buildForm(): void {

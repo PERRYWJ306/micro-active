@@ -1,7 +1,22 @@
 <div class="main-section">
     <div class="main-container">
-        <!-- <div class="main-row"><span class="main-jumbo">ENVISION POSSIBILITIES</span></div>
-        <div class="main-row"><span class="main-jumbo-small">ESTABLISH REQUIREMENTS</span></div>
-        <div class="main-row"><span class="main-jumbo-tiny">IMPLEMENT SOLUTIONS AND FEATURES</span></div>         -->
+        <div class="services">
+            <div class="service-slide">
+                <div class="service-items">
+                    @for (item of services; track $index) {
+                        <div>
+                            <span class="main-jumbo-tiny">{{item.name}}</span>                        
+                        </div>
+                    }
+                </div>
+                <div class="service-items">
+                    @for (item of services; track $index) {
+                        <div>
+                            <span class="main-jumbo-tiny">{{item.name}}</span>                        
+                        </div>
+                    }
+                </div>                
+            </div>
+        </div>
     </div>
 </div>

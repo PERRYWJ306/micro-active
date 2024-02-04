@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SERVICES_LIST } from '../services.data';
 
 @Component({
   selector: 'app-main-body',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './main-body.component.scss'
 })
 export class MainBodyComponent {
-
+  services = SERVICES_LIST;
 }
