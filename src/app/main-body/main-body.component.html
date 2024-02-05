@@ -5,14 +5,14 @@
                 <div class="service-items">
                     @for (item of services; track $index) {
                         <div>
-                            <span class="main-jumbo-tiny">{{item.name}}</span>                        
+                            <a (click)="onServiceClicked(item)"><span class="main-jumbo-tiny">{{item.name}}</span></a>                            
                         </div>
                     }
                 </div>
                 <div class="service-items">
                     @for (item of services; track $index) {
                         <div>
-                            <span class="main-jumbo-tiny">{{item.name}}</span>                        
+                            <a (click)="onServiceClicked(item)"><span class="main-jumbo-tiny">{{item.name}}</span></a>                        
                         </div>
                     }
                 </div>                
