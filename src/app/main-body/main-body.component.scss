@@ -58,11 +58,7 @@
     height: 600px;
 }
 
-.service-slide:hover .service-items {
-    animation-play-state: paused;
-}
-
 .service-items {
-    animation: 15s services-frame infinite linear;
+    animation: 25s services-frame infinite linear;
     white-space: nowrap;
 }
